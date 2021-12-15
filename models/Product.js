@@ -6,7 +6,7 @@ const sequelize = require("../config/connection");
 
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Product extends Model {}
-
+ // connect Category ID here
 // set up fields and rules for Product model
 Product.init({
   id: {
@@ -34,6 +34,7 @@ Product.init({
     },
     defaultValue: 10,
   },
+  // references the Category model's ids
   category_id: {
     type: DataTypes.INTEGER,
     references: {
